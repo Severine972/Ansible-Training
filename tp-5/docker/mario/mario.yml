@@ -1,0 +1,11 @@
+---
+- name: "Mario installation"
+  become: yes
+  hosts: prod
+  tasks:
+    - name: Create default containers
+      docker_container:
+        name: "super-mario"
+        image: "pengbai/docker-supermario"
+        state: present
+---
